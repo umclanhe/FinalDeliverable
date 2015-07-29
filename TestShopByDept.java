@@ -13,11 +13,11 @@ public class TestShopByDept {
 	
 	@Before
 	public void setUp() throws Exception {
-	        driver.get("https://www.amazon.com");
-	        driver.findElement(By.linkText("Sign in")).click();
-	        driver.findElement(By.id("ap_email")).sendKeys("lah135@pitt.edu");
-		driver.findElement(By.id("ap_password")).sendKeys("umc6080");
-		driver.findElement(By.id("signInSubmit-input")).click();
+	    driver.get("https://www.amazon.com");
+	    driver.findElement(By.linkText("Sign in")).click();
+	    driver.findElement(By.id("ap_email")).sendKeys("lah135@pitt.edu");
+            driver.findElement(By.id("ap_password")).sendKeys("umc6080");
+	    driver.findElement(By.id("signInSubmit-input")).click();
 	}
 
 //	Given I¡¯m signed in and there is no item in my shopping cart,
@@ -30,26 +30,26 @@ public class TestShopByDept {
 
 	@Test
 	public void test() {
-		driver.findElement(By.id("nav-link-shopall")).click();
-		WebElement temp = driver.findElement(By.xpath("//div[@class='nav-template nav-flyout-content nav-tpl-itemList']/div"));
-		WebElement pbk = temp.findElement(By.xpath("//span[contains(@class,'nav-text') and .//text()='Books & Audible']"));
-		pbk.click();		
-		WebElement tt = driver.findElement(By.xpath("//*[@id='nav-flyout-shopAll']/div[3]/div[9]/div[1]/a[3]/span"));		   
-		tt.click();
-		driver.findElement(By.linkText("Ages 3-5 Years Old")).click();
-		WebElement et = driver.findElement(By.linkText("Editors' Picks"));
-		et.click();
-                WebElement bk1 = driver.findElement(By.linkText("Bob and Flo"));
-		bk1.click();
+	    driver.findElement(By.id("nav-link-shopall")).click();
+	    WebElement temp = driver.findElement(By.xpath("//div[@class='nav-template nav-flyout-content nav-tpl-itemList']/div"));
+	    WebElement pbk = temp.findElement(By.xpath("//span[contains(@class,'nav-text') and .//text()='Books & Audible']"));
+	    pbk.click();		
+	    WebElement tt = driver.findElement(By.xpath("//*[@id='nav-flyout-shopAll']/div[3]/div[9]/div[1]/a[3]/span"));		   
+	    tt.click();
+	    driver.findElement(By.linkText("Ages 3-5 Years Old")).click();
+	    WebElement et = driver.findElement(By.linkText("Editors' Picks"));
+	    et.click();
+            WebElement bk1 = driver.findElement(By.linkText("Bob and Flo"));
+	    bk1.click();
 		
-		try
-		{	
-		WebElement title = driver.findElement(By.id("productTitle"));
-		String str = title.getText();
-		assertTrue(str.contains("Bob and Flo"));
-		} catch (NoSuchElementException nseex) {
-		fail();			
-		} 
+	    try
+	    {	
+	    WebElement title = driver.findElement(By.id("productTitle"));
+	    String str = title.getText();
+	    assertTrue(str.contains("Bob and Flo"));
+	    } catch (NoSuchElementException nseex) {
+	    fail();			
+	    } 
 	}
 
 }
