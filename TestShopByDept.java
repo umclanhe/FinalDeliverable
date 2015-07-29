@@ -13,20 +13,20 @@ public class TestShopByDept {
 	
 	@Before
 	public void setUp() throws Exception {
-	    driver.get("https://www.amazon.com");
-	    driver.findElement(By.linkText("Sign in")).click();
-	    driver.findElement(By.id("ap_email")).sendKeys("lah135@pitt.edu");
+	        driver.get("https://www.amazon.com");
+	        driver.findElement(By.linkText("Sign in")).click();
+	        driver.findElement(By.id("ap_email")).sendKeys("lah135@pitt.edu");
 		driver.findElement(By.id("ap_password")).sendKeys("umc6080");
 		driver.findElement(By.id("signInSubmit-input")).click();
 	}
 
-//	Given I¡¯m signed in and there is no item in my shopping cart,
+//	Given IÂ¡Â¯m signed in and there is no item in my shopping cart,
 //  When I click "Shop By Department" and find the visible itemlist template,
 //	and click "Books & Audible" and find "Children's Books" and click it,
 //  and click "Ages 3-5 Years Old" in the new page,
 //  and click "Edit's Picks" in the new page,
 //  and click "Bob and Flo" in the new page,
-//  Then I see the product details for the book ¡°Bob and Flo¡± displayed on the new page	
+//  Then I see the product details for the book Â¡Â°Bob and FloÂ¡Â± displayed on the new page	
 
 	@Test
 	public void test() {
@@ -39,7 +39,7 @@ public class TestShopByDept {
 		driver.findElement(By.linkText("Ages 3-5 Years Old")).click();
 		WebElement et = driver.findElement(By.linkText("Editors' Picks"));
 		et.click();
-        WebElement bk1 = driver.findElement(By.linkText("Bob and Flo"));
+                WebElement bk1 = driver.findElement(By.linkText("Bob and Flo"));
 		bk1.click();
 		
 		try
