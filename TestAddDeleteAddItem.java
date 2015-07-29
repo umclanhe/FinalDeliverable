@@ -9,21 +9,21 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestAddDeleteAddItem {
 	
-        WebDriver driver= new FirefoxDriver();
+            WebDriver driver= new FirefoxDriver();
 	
 	@Before
 	public void setUp() throws Exception {
 	    driver.get("https://www.amazon.com");
 	    driver.findElement(By.linkText("Sign in")).click();
 	    driver.findElement(By.id("ap_email")).sendKeys("lah135@pitt.edu");
-		driver.findElement(By.id("ap_password")).sendKeys("umc6080");
-		driver.findElement(By.id("signInSubmit-input")).click();
+	    driver.findElement(By.id("ap_password")).sendKeys("umc6080");
+	    driver.findElement(By.id("signInSubmit-input")).click();
 	}
 	
 // Given I'm logged in and there is no item in the cart,
-// When I choose the option of dropdown list ¡°Books¡±,
-// and enter the book name ¡°the little prince¡±,
-// and click the button ¡°search¡±,
+// When I choose the option of dropdown list Â¡Â°BooksÂ¡Â±,
+// and enter the book name Â¡Â°the little princeÂ¡Â±,
+// and click the button Â¡Â°searchÂ¡Â±,
 // and see the search result page and I click "The Little Prince",
 // I see the product detail page for "The Little Prince" and click "Add to Cart" button,
 // I see a updated page and click the button "Cart",
