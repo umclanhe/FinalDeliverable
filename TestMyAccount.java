@@ -8,15 +8,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestMyAccount {
 	
-        WebDriver driver= new FirefoxDriver();
+            WebDriver driver= new FirefoxDriver();
 	
 	@Before
 	public void setUp() throws Exception {
 	    driver.get("https://www.amazon.com");
 	    driver.findElement(By.linkText("Sign in")).click();
 	    driver.findElement(By.id("ap_email")).sendKeys("lah135@pitt.edu");
-		driver.findElement(By.id("ap_password")).sendKeys("umc6080");
-		driver.findElement(By.id("signInSubmit-input")).click();
+	    driver.findElement(By.id("ap_password")).sendKeys("umc6080");
+	    driver.findElement(By.id("signInSubmit-input")).click();
 	}
 	
 // Given I'm logged in and don't buy any item,
@@ -29,8 +29,8 @@ public class TestMyAccount {
 	@Test
 	public void testCountManage() {
 	    driver.findElement(By.id("nav-link-yourAccount")).click();
-		WebElement mc = driver.findElement(By.xpath(".//*[@id='nav-flyout-yourAccount']/div[2]/a[1]/span"));
-		mc.click();
+	    WebElement mc = driver.findElement(By.xpath(".//*[@id='nav-flyout-yourAccount']/div[2]/a[1]/span"));
+	    mc.click();
 	    driver.findElement(By.linkText("Your Orders")).click();
 	    driver.findElement(By.xpath(".//*[@id='orderTypeMenuContainer']/ul/li[3]/span/a")).click();
 	    
