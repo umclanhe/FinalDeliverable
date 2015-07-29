@@ -34,27 +34,27 @@ public class TestAddDeleteAddItem {
 
 	@Test
 	public void test() {
-		Select dropdown = new Select(driver.findElement(By.id("searchDropdownBox")));
-		dropdown.selectByValue("search-alias=stripbooks");
-		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("the little prince ");
-		WebElement schdiv = driver.findElement(By.cssSelector("#nav-search .nav-search-submit .nav-input"));
-		schdiv.click();
-		WebElement lk = driver.findElement(By.linkText("The Little Prince"));
-		lk.click();
-		driver.findElement(By.id("add-to-cart-button")).click();
-		driver.findElement(By.id("hlb-view-cart-announce")).click();
-		WebElement dt = driver.findElement(By.xpath(".//*[@id='activeCartViewForm']/div[2]/div/div[4]/div[2]/div[1]/div/div/div[2]/div/span[1]/span/input"));
-		dt.click();
-		driver.findElement(By.linkText("The Little Prince")).click();
-		driver.findElement(By.className("a-button-input")).click();
+	    Select dropdown = new Select(driver.findElement(By.id("searchDropdownBox")));
+	    dropdown.selectByValue("search-alias=stripbooks");
+	    driver.findElement(By.id("twotabsearchtextbox")).sendKeys("the little prince ");
+	    WebElement schdiv = driver.findElement(By.cssSelector("#nav-search .nav-search-submit .nav-input"));
+	    schdiv.click();
+	    WebElement lk = driver.findElement(By.linkText("The Little Prince"));
+	    lk.click();
+	    driver.findElement(By.id("add-to-cart-button")).click();
+	    driver.findElement(By.id("hlb-view-cart-announce")).click();
+	    WebElement dt = driver.findElement(By.xpath(".//*[@id='activeCartViewForm']/div[2]/div/div[4]/div[2]/div[1]/div/div/div[2]/div/span[1]/span/input"));
+	    dt.click();
+	    driver.findElement(By.linkText("The Little Prince")).click();
+	    driver.findElement(By.className("a-button-input")).click();
 		
-		try {
-		WebElement el = driver.findElement(By.id("huc-v2-order-row-confirm-text"));
-		String st = el.getText();
-		assertTrue(st.contains("Added to Cart"));			
-		} catch(NoSuchElementException nseex) {
-		fail();
-		}
+	    try {
+	    WebElement el = driver.findElement(By.id("huc-v2-order-row-confirm-text"));
+	    String st = el.getText();
+	    assertTrue(st.contains("Added to Cart"));			
+	    } catch(NoSuchElementException nseex) {
+	    fail();
+	    }
 	}
 
 }
